@@ -50,7 +50,7 @@ class BookCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookDetailCollectionViewCell", for: indexPath) as! BookDetailCollectionViewCell
         
         cell.cellSetting(book: movies[indexPath.row])
-        
+        cell.imageFetching(title: movies[indexPath.row].title)
         
     
         return cell
