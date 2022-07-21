@@ -26,6 +26,7 @@ class BookDetailCollectionViewCell: UICollectionViewCell {
     func cellSetting(book: Movie) {
         
         bookTitleLabel.text = book.title
+        bookTitleLabel.font = .boldSystemFont(ofSize: 18)
         bookRateLabel.text = book.rate.description
         self.backgroundColor = colorArray.randomElement()
         self.layer.cornerRadius = 15

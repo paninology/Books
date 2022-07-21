@@ -29,9 +29,26 @@ class BookCollectionViewController: UICollectionViewController {
         layout.itemSize = CGSize(width: width, height: width )
       
         collectionView.collectionViewLayout = layout
+       
     }
     
-
+    @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
+        
+        let sb = UIStoryboard(name: "BookSearch", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: "BookSearchTableViewController") as? BookSearchTableViewController else {
+            print("VC nil error")
+            return
+        }
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .overFullScreen
+        present(navi, animated: true)
+        
+    }
+    
+    
+    
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -56,6 +73,16 @@ class BookCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: BookDetailViewController.identifier) as? BookDetailViewController else {
+            print("VC nil error from \(self)")
+            return
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+       
+    }
 
     
 }

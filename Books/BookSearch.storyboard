@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Book Search Table View Controller-->
+        <scene sceneID="wVs-ie-F6p">
+            <objects>
+                <tableViewController storyboardIdentifier="BookSearchTableViewController" id="1KX-SB-r9G" customClass="BookSearchTableViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Yib-Ke-vZT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="N5i-47-Oqm">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tn-GD-Dik">
+                                    <rect key="frame" x="8" y="8" width="44" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="CcH-mt-YFh"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="cancelButtonClicked:" destination="1KX-SB-r9G" eventType="touchUpInside" id="VGe-pk-Kye"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CdN-H0-MIO">
+                                    <rect key="frame" x="92" y="8" width="314" height="28"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="찾으시는 책을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-oz-ROV">
+                                            <rect key="frame" x="0.0" y="0.0" width="262" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-si-9cd">
+                                            <rect key="frame" x="270" y="0.0" width="44" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="9jn-Ho-QS7"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="DFf-si-9cd" firstAttribute="leading" secondItem="Uhf-oz-ROV" secondAttribute="trailing" constant="8" id="1G9-Tw-8ZX"/>
+                                        <constraint firstItem="Uhf-oz-ROV" firstAttribute="leading" secondItem="CdN-H0-MIO" secondAttribute="leading" id="FLi-Ad-2Er"/>
+                                        <constraint firstItem="Uhf-oz-ROV" firstAttribute="top" secondItem="CdN-H0-MIO" secondAttribute="top" id="GkO-np-tI4"/>
+                                        <constraint firstItem="DFf-si-9cd" firstAttribute="top" secondItem="CdN-H0-MIO" secondAttribute="top" id="a4g-0x-mlB"/>
+                                        <constraint firstAttribute="bottom" secondItem="DFf-si-9cd" secondAttribute="bottom" id="sfH-1f-nwS"/>
+                                        <constraint firstAttribute="trailing" secondItem="DFf-si-9cd" secondAttribute="trailing" id="vJg-do-S3s"/>
+                                        <constraint firstAttribute="bottom" secondItem="Uhf-oz-ROV" secondAttribute="bottom" id="z4n-cS-s8j"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="CdN-H0-MIO" secondAttribute="bottom" constant="8" id="8Aa-NB-Lg3"/>
+                                <constraint firstItem="2Tn-GD-Dik" firstAttribute="top" secondItem="N5i-47-Oqm" secondAttribute="top" constant="8" id="EuA-mv-ckb"/>
+                                <constraint firstItem="CdN-H0-MIO" firstAttribute="leading" secondItem="2Tn-GD-Dik" secondAttribute="trailing" constant="40" id="FHv-eV-9z6"/>
+                                <constraint firstAttribute="bottom" secondItem="2Tn-GD-Dik" secondAttribute="bottom" constant="8" id="OuK-KG-6iH"/>
+                                <constraint firstItem="2Tn-GD-Dik" firstAttribute="leading" secondItem="N5i-47-Oqm" secondAttribute="leading" constant="8" id="P22-Jv-p7c"/>
+                                <constraint firstItem="CdN-H0-MIO" firstAttribute="top" secondItem="N5i-47-Oqm" secondAttribute="top" constant="8" id="SJH-5C-Gq8"/>
+                                <constraint firstAttribute="trailing" secondItem="CdN-H0-MIO" secondAttribute="trailing" constant="8" id="eMk-LZ-aPb"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TbZ-Q3-whY">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TbZ-Q3-whY" id="EGH-FR-Zny">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1KX-SB-r9G" id="Och-7E-V5w"/>
+                            <outlet property="delegate" destination="1KX-SB-r9G" id="qp4-V2-c39"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bY2-sO-66y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.681159420289859" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
